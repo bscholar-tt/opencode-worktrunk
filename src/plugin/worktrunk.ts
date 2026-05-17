@@ -1,4 +1,5 @@
 import { type Plugin, tool } from "@opencode-ai/plugin"
+import type { Event } from "@opencode-ai/sdk"
 import { z } from "zod"
 
 const branchSchema = z
@@ -64,6 +65,9 @@ const WorktrunkPlugin: Plugin = async (ctx) => {
 
 	const logWarn = (msg: string) =>
 		client.app.log({ body: { service: "worktrunk", level: "warn", message: msg } }).catch(() => {})
+
+	const setMarker = (marker: string) =>
+		exec(["wt", "config", "state", "marker", "set", marker], directory).catch(() => {})
 
 	ctx.experimental_workspace.register("worktrunk", {
 		name: "Worktrunk Worktree",
@@ -170,6 +174,15 @@ const WorktrunkPlugin: Plugin = async (ctx) => {
 			}),
 		},
 
+		"tool.execute.before": async () => {
+			await setMarker("🤖")
+		},
+
+		event: async ({ event }: { event: Event }) => {
+			if (event.type === "session.idle") {
+				await setMarker("💬")
+			}
+		},
 	}
 }
 
