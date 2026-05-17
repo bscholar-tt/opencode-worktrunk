@@ -32,6 +32,6 @@ Add to your OpenCode config:
 
 ```json
 {
-  "plugin": ["opencode-worktrunk"]
+  "plugin": ["bscholar-tt/opencode-worktrunk"]
 }
 ```
