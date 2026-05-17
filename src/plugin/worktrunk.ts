@@ -186,4 +186,4 @@ const WorktrunkPlugin: Plugin = async (ctx) => {
 	}
 }
 
-export default WorktrunkPlugin
+export const server = WorktrunkPlugin

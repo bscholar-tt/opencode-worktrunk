@@ -1,0 +1,8 @@
+{
+  "main": "src/plugin/worktrunk.ts",
+  "dependencies": {
+    "@opencode-ai/plugin": "^1.15.3",
+    "@opencode-ai/sdk": "^1.15.3",
+    "zod": "^4.4.3"
+  }
+}
