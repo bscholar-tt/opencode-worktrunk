@@ -1,4 +1,4 @@
-# opencode-worktrunk
+# (WIP) opencode-worktrunk
 
 An [OpenCode](https://opencode.ai) plugin that creates and manages git worktrees using [worktrunk](https://worktrunk.dev) (`wt`).
 
