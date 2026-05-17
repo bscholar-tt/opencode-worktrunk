@@ -26,6 +26,17 @@ Removes a worktree and its branch via `wt remove <branch>`.
 |-----|----------|-------------|
 | `branch` | yes | Branch name of the worktree to delete |
 
+## Status Markers
+
+The plugin automatically updates the worktrunk status marker for the current worktree:
+
+| Marker | Meaning |
+|--------|---------|
+| 🤖 | Agent is executing a tool |
+| 💬 | Session is idle / waiting |
+
+These show up in `wt list` and any worktrunk-aware status line.
+
 ## Installation
 
 Add to your OpenCode config:
